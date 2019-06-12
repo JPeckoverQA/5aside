@@ -1,0 +1,9 @@
+com\qa\rest\TeamEndpoint.class
+com\qa\model\Player.class
+com\qa\repository\PlayerRepository.class
+com\qa\rest\JAXRSConfiguration.class
+com\qa\rest\PlayerEndpoint.class
+com\qa\repository\TeamRepository.class
+com\qa\repository\TeamDB.class
+com\qa\model\Team.class
+com\qa\repository\PlayerDB.class
