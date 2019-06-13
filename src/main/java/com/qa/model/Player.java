@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Player {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String forename;
 	private String surname;
