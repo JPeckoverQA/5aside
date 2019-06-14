@@ -28,6 +28,9 @@ function createPlayer() {
     console.log(jsonPlayer);
     dataRequest("POST", "/player", jsonPlayer).then((request) => {
         console.log(request.responseText);
+        sessionStorage.setItem('playerId', user.id);
+        sessionStorage.setItem('teamId', user.teamPin);
+        window.location.href = 'http://35.246.42.33:8080/5aside-1.0/team/';
     })
 }
 
