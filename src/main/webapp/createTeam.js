@@ -1,7 +1,7 @@
 let team = {
     name: "Team United",
     homeColour: "blue",
-    awayColour: "green"
+    awayColour: "white"
 }
 
 
