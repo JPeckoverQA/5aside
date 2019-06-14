@@ -15,7 +15,7 @@ function verifyPlayer() {
                     
                 }
         }
-        window.alert('No player recognised')
+            window.alert('No player recognised')
             return false;
         });
 };
