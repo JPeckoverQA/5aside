@@ -9,11 +9,6 @@
 
     <meta charset="utf-8" />
 
-    <script type="text/javascript">
-        function noenter() {
-            return !(window.event && window.event.keyCode == 13);
-        }
-    </script>
 
     <title>5 A-side</title>
 </head>
@@ -23,7 +18,7 @@
 
     <h2>Login</h2>
 
-    <form>
+    <form name="loginForm" onsubmit="return false">
         <div class="form-group">
             <label for="emailLoginLabel">Login with your email address:</label>
             <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
@@ -34,7 +29,7 @@
 
     <h2>Register</h2>
 
-    <form>
+    <form name="registerForm" onsubmit="return false">
         <div class="form-group">
             <label for="emailRegisterLabel">Email:</label>
             <input type="email" class="form-control" id="emailRegister" aria-describedby="emailRegisterHelp" placeholder="Enter email">
