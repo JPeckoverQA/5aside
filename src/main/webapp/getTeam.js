@@ -10,3 +10,4 @@ function getTeam(teamId) {
     })
 }
 
+//<button type="button" class="btn btn-outline-success" onclick="getTeam(userTeamId)">Success</button>

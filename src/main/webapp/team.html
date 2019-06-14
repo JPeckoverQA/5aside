@@ -11,19 +11,22 @@
 
     <meta charset="utf-8" />
     <title>team</title>
+
+    <script>
+        let userTeamId = sessionStorage.getItem('teamId');
+        getTeam(userTeamId)
+        console.log(userTeamId);
+    </script>
+
 </head>
 <body>
 
-    <script>
 
-        let userTeamId = sessionStorage.getItem('teamId');
-        console.log(userTeamId);
-    </script>
 
     <div ><h1 id="userTeamNameHeader"> getTeam(teamId)</h1></div>
     
 
-    <button type="button" class="btn btn-outline-success" onclick="getTeam(userTeamId)">Success</button>
+    
 
 
     <script src="dataRequest.js"></script>
