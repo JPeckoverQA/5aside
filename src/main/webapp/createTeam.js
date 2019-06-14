@@ -11,10 +11,10 @@ function createTeam() {
         team.name = document.getElementById("teamNameRegister").value;
     }
     if (document.getElementById("homeKitColourRegister").value != "") {
-        team.cost = document.getElementById("homeKitColourRegister").value;
+        team.homeColour = document.getElementById("homeKitColourRegister").value;
     }
     if (document.getElementById("awayKitColourRegister").value != "") {
-        team.type = document.getElementById("awayKitColourRegister").value;
+        team.awayColour = document.getElementById("awayKitColourRegister").value;
     }
 
     let jsonTeam = JSON.stringify(team);
