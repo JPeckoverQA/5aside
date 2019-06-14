@@ -8,13 +8,13 @@ let team = {
 function createTeam() {
 
     if (document.getElementById("teamNameRegister").value != "") {
-        team.name = document.getElementById("name").value;
+        team.name = document.getElementById("teamNameRegister").value;
     }
     if (document.getElementById("homeKitColourRegister").value != "") {
-        team.cost = document.getElementById("homeColour").value;
+        team.cost = document.getElementById("homeKitColourRegister").value;
     }
     if (document.getElementById("awayKitColourRegister").value != "") {
-        team.type = document.getElementById("awayColour").value;
+        team.type = document.getElementById("awayKitColourRegister").value;
     }
 
     let jsonTeam = JSON.stringify(team);
