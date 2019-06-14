@@ -1,37 +1,9 @@
-let player = {
-    forename: "Ngolo",
-    surname: "Kante",
-    contactNo: 0,
-    email: "ngolo@gmail.com",
-    teamId: 1
-}
-
-function addCard() {
-    setValues();
-    let jsonCard = JSON.stringify(card);
-    console.log(jsonCard);
-    serverRequest("POST", "/cards", jsonCard).then((request) => {
-        console.log("Data Sent:" + request.responseText);
+function createPlayer() {
+   
+    setPlayerDetails();
+    let jsonPlayer = JSON.stringify(player);
+    console.log(jsonPlayer);
+    serverRequest("POST", "/players", jsonPlayer).then((request) => {
+        console.log(request.responseText);
     })
-}
-
-function setValues() {
-    if (document.getElementById("nameInput").value != "") {
-        card.name = document.getElementById("nameInput").value;
-    }
-    if (document.getElementById("costInput").value != "") {
-        card.cost = document.getElementById("costInput").value;
-    }
-    if (document.getElementById("typeInput").value != "") {
-        card.type = document.getElementById("typeInput").value;
-    }
-    if (document.getElementById("cardTextInput").value != "") {
-        card.cardText = document.getElementById("cardTextInput").value;
-    }
-    if (document.getElementById("damageInput").value != "") {
-        card.damage = document.getElementById("damageInput").value;
-    }
-    if (document.getElementById("healthInput").value != "") {
-        card.health = document.getElementById("healthInput").value;
-    }
 }
