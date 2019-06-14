@@ -23,10 +23,11 @@ function createPlayer() {
     if (document.getElementById("teamPinRegister").value != "") {
         player.teamPin = document.getElementById("teamPinRegister").value;
     }
+
+    let jsonPlayer = JSON.stringify(player);
+    console.log(jsonPlayer);
+    dataRequest("POST", "/player", jsonPlayer).then((request) => {
+        console.log(request.responseText);
+    })
 }
 
-let jsonPlayer = JSON.stringify(player);
-console.log(jsonPlayer);
-dataRequest("POST", "/player", jsonPlayer).then((request) => {
-    console.log(request.responseText);
-})
