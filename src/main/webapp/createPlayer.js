@@ -1,8 +1,12 @@
-defaultPlayer();
+let player = {
+    forename: "Ngolo",
+    surname: "Kante",
+    contactNo: "07862454412",
+    email: "ngolo@gmail.com",
+    teamPin: 1
+}
 
 function createPlayer() {
-
-    defaultPlayer();
 
     if (document.getElementById("forenameRegister").value != "") {
         player.forename = document.getElementById("forenameInput").value;
