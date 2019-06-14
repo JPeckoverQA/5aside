@@ -10,7 +10,7 @@ function verifyPlayer() {
                     console.log(user);      
                     sessionStorage.setItem('playerId', user.id);
                     sessionStorage.setItem('teamId', user.teamPin);
-                    window.location = 'http://35.246.42.33:8080/5aside-1.0/team.html/';
+                    window.location.href = '/team.html/';
                     return user;
                     
                 }
