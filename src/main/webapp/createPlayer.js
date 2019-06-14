@@ -1,3 +1,5 @@
+defaultPlayer();
+
 function createPlayer() {
 
     defaultPlayer();
