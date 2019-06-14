@@ -8,3 +8,7 @@ function getUserTeam(userTeamId) {
         console.log(teamDetails);
     })
 }
+
+
+<script src="getTeam.js"></script>
+    <script src="getSessionStorage.js"></script>
