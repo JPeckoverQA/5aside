@@ -13,11 +13,9 @@ public class Player {
 	private int id;
 	private String forename;
 	private String surname;
-	private int contactNo;
+	private String contactNo;
 	private String email;
-	private String emergencyContact;
-	private int emergencyContactNo;
-	private int teamId;
+	private int teamPin;
 	
 	
 	public int getId() {
@@ -38,10 +36,10 @@ public class Player {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	public int getContactNo() {
+	public String getContactNo() {
 		return contactNo;
 	}
-	public void setContactNo(int contactNo) {
+	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
 	public String getEmail() {
@@ -50,23 +48,11 @@ public class Player {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getEmergencyContact() {
-		return emergencyContact;
+	public int getTeamPin() {
+		return teamPin;
 	}
-	public void setEmergencyContact(String emergencyContact) {
-		this.emergencyContact = emergencyContact;
-	}
-	public int getEmergencyContactNo() {
-		return emergencyContactNo;
-	}
-	public void setEmergencyContactNo(int emergencyContactNo) {
-		this.emergencyContactNo = emergencyContactNo;
-	}
-	public int getTeamId() {
-		return teamId;
-	}
-	public void setTeamId(int teamId) {
-		this.teamId = teamId;
+	public void setTeamPin(int teamId) {
+		this.teamPin = teamId;
 	}
 
 	

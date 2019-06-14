@@ -41,9 +41,7 @@ public class PlayerDB implements PlayerRepository {
 		player.setSurname(newInfo.getSurname());
 		player.setContactNo(newInfo.getContactNo());
 		player.setEmail(newInfo.getEmail());
-		player.setEmergencyContact(newInfo.getEmergencyContact());
-		player.setEmergencyContactNo(newInfo.getEmergencyContactNo());
-		player.setTeamId(newInfo.getTeamId());
+		player.setTeamPin(newInfo.getTeamPin());
 		return player;		
 	}
 	
