@@ -12,4 +12,5 @@ function userTeamName(teamId) {
         let teamDetails = JSON.parse(request.responseText);
         document.getElementById(userTeamNameHeader).innerHTML(teamDetails);
 
+    })
 }
