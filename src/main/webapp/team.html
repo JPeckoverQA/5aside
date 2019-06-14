@@ -15,12 +15,7 @@
 
 </head>
 <body>
-    <script>
-        let userTeamId = sessionStorage.getItem('teamId');
-        getTeam(userTeamId)
-        console.log(userTeamId);
-        window.onload = getTeam(teamId);
-    </script>
+
 
 
 
@@ -32,6 +27,12 @@
 
     <script src="dataRequest.js"></script>
     <script src="getTeam.js"></script>
+    <script>
+        let userTeamId = sessionStorage.getItem('teamId');
+        getTeam(userTeamId);
+        console.log(userTeamId);
+        window.onload = getTeam(teamId);
+    </script>
 
 
 </body>
