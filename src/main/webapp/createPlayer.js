@@ -24,4 +24,3 @@ console.log(jsonPlayer);
 serverRequest("POST", "/players", jsonPlayer).then((request) => {
     console.log(request.responseText);
 })
-}
