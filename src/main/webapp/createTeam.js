@@ -19,7 +19,7 @@ function createTeam() {
 
     let jsonTeam = JSON.stringify(team);
     console.log(jsonTeam);
-    serverRequest("POST", "/team", jsonTeam).then((request) => {
+    dataRequest("POST", "/team", jsonTeam).then((request) => {
         console.log(request.responseText);
     })
 }
