@@ -27,6 +27,6 @@ function createPlayer() {
 
 let jsonPlayer = JSON.stringify(player);
 console.log(jsonPlayer);
-dataRequest("POST", "/players", jsonPlayer).then((request) => {
+dataRequest("POST", "/player", jsonPlayer).then((request) => {
     console.log(request.responseText);
 })
