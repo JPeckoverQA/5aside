@@ -7,10 +7,10 @@ let team = {
 
 function createTeam() {
 
-    if (document.getElementById("awayKitColourRegister").value != "") {
+    if (document.getElementById("teamNameRegister").value != "") {
         team.name = document.getElementById("name").value;
     }
-    if (document.getElementById("awayKitColourRegister").value != "") {
+    if (document.getElementById("homeKitColourRegister").value != "") {
         team.cost = document.getElementById("homeColour").value;
     }
     if (document.getElementById("awayKitColourRegister").value != "") {
