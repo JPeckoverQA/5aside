@@ -7,6 +7,7 @@ function verifyPlayer() {
                 if (player.email === document.getElementById("emailLogin").value) {  //create input form for both
                     console.log('Player found', player);
                     window.location.href = 'http://35.246.42.33:8080/5aside-1.0/team/';
+                    return player;
                 }
             }
             console.warn('No player recognised')
