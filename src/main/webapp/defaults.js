@@ -6,7 +6,6 @@ function defaultPlayer() {
         email: "ngolo@gmail.com",
         teamPin: 1
     }
-    return player;
 }
 
 function defaultTeam() {
@@ -15,5 +14,4 @@ function defaultTeam() {
         homeColour: "blue",
         awayColour: "green"
     }
-    return team;
 }
