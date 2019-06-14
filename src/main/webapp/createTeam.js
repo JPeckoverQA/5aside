@@ -7,14 +7,14 @@ let team = {
 
 function createTeam() {
 
-    if (document.getElementById("name").value != "") {
+    if (document.getElementById("awayKitColourRegister").value != "") {
         team.name = document.getElementById("name").value;
     }
-    if (document.getElementById("homeColour").value != "") {
-        team.cost = document.getElementById("surnameInput").value;
+    if (document.getElementById("awayKitColourRegister").value != "") {
+        team.cost = document.getElementById("homeColour").value;
     }
-    if (document.getElementById("awayColour").value != "") {
-        team.type = document.getElementById("contactNoInput").value;
+    if (document.getElementById("awayKitColourRegister").value != "") {
+        team.type = document.getElementById("awayColour").value;
     }
 
     let jsonTeam = JSON.stringify(team);
