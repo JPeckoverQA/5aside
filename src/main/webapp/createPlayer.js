@@ -9,19 +9,19 @@ let player = {
 function createPlayer() {
 
     if (document.getElementById("forenameRegister").value != "") {
-        player.forename = document.getElementById("forenameInput").value;
+        player.forename = document.getElementById("forenameRegister").value;
     }
     if (document.getElementById("surnameRegister").value != "") {
-        player.surname = document.getElementById("surnameInput").value;
+        player.surname = document.getElementById("surnameRegister").value;
     }
     if (document.getElementById("contactNoRegister").value != "") {
-        player.contactNo = document.getElementById("contactNoInput").value;
+        player.contactNo = document.getElementById("contactNoRegister").value;
     }
     if (document.getElementById("emailRegister").value != "") {
-        player.email = document.getElementById("emailInput").value;
+        player.email = document.getElementById("emailRegister").value;
     }
     if (document.getElementById("teamPinRegister").value != "") {
-        player.teamPin = document.getElementById("teamPin").value;
+        player.teamPin = document.getElementById("teamPinRegister").value;
     }
 }
 
