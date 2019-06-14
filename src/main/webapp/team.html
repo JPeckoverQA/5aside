@@ -14,19 +14,20 @@
 </head>
 <body>
 
-    <script> src="getTeam.js"
+    <script>
+
         let userTeamId = sessionStorage.getItem('teamId');
         console.log(userTeamId);
-        getTeam(userTeamId);
-        console.log(teamDetails)
     </script>
 
     <h1> getTeam(teamId)</h1>
 
+    <button type="button" class="btn btn-outline-success" onclick="getTeam(userTeamId)">Success</button>
 
 
     <script src="dataRequest.js"></script>
-  
+    <script src="getTeam.js"></script>
+
 
 </body>
 </html>
