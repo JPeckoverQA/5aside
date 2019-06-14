@@ -3,7 +3,7 @@ function getTeam(teamId) {
         let teamDetails = JSON.parse(request.responseText);
         console.log(teamDetails);
         let userTeamName = teamDetails.name;
-        document.getElementById(userTeamNameHeader).appendChild(userTeamName);
+        document.getElementById(userTeamNameHeader).innerHTML =userTeamName;
         return teamDetails;
         
     })
