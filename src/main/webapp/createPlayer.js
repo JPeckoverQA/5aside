@@ -30,7 +30,7 @@ function createPlayer() {
         console.log(request.responseText);
         sessionStorage.setItem('playerId', player.id);
         sessionStorage.setItem('teamId', player.teamPin);
-        window.location.href = 'http://35.246.42.33:8080/5aside-1.0/team.html/';
+        window.location.href = '/5aside-1.0/team.html';
     })
 }
 
