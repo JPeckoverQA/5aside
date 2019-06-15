@@ -1,4 +1,4 @@
-function getTeam(teamId) {
+function displayTeamDetails(teamId) {
     dataRequest("GET", "/team/" + teamId).then((request) => {
         let teamDetails = JSON.parse(request.responseText);
         

@@ -15,13 +15,13 @@
 
 </head>
 <body>
+    <div><h2 id="userForenameHeader">Player Name</h2></div>
     <div><h1 id="userTeamNameHeader">Team Name</h1></div>
     <div>
         <h4 id="teamHomeColour"> Home Colour</h4>
         <h4 id="teamAwayColour"> Away Colour</h4>
     </div>
     <div><h5 id="teamPin">Player Name</h5></div>
-    <div><h2 id="userForenameHeader">Player Name</h2></div>
 
     <div><button type="button" class="btn btn-outline-dark" id="updatePlayerDetailsButton" onclick="window.location.href = '/5aside-1.0/player.html'">Player Portal</button></div>
     <button id="deleteTeamButton" type="button" class="btn btn-outline-danger" onclick="deleteTeam(sessionStorage.getItem('teamId'))">Delete Team</button>
@@ -35,8 +35,8 @@
 
 
     <script>
-        window.onload = getTeam(sessionStorage.getItem('teamId'));
-        window.onload = getPlayer(sessionStorage.getItem('playerId'));
+        window.onload = displayTeamDetails(sessionStorage.getItem('teamId'));
+        window.onload = welcomePlayer(sessionStorage.getItem('playerId'));
     </script>
 
 
