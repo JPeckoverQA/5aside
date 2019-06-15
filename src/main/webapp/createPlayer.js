@@ -32,7 +32,7 @@ function createPlayer() {
         window.alert("You must enter a contact number.")
         return;
     }
-    if (document.getElementById("teamPinRegister").value) {
+    if (document.getElementById("teamPinRegister").value != 0){
         player.teamPin = document.getElementById("teamPinRegister").value;
     }
 
