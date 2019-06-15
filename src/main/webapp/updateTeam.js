@@ -1,7 +1,6 @@
 function populateTeamDetails(teamId) {
     dataRequest("GET", "/team/" + teamId).then((request) => {
         let teamDetails = JSON.parse(request.responseText);
-
         document.getElementById('teamNameUpdate').value = teamDetails.name;
         document.getElementById('homeColourUpdate').value = teamDetails.homeColour;
         document.getElementById('awayColourUpdate').value = teamDetails.awayColour;
