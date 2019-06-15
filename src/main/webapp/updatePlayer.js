@@ -35,6 +35,9 @@ function updatePlayer(playerId) {
         console.log(playerJSON);
         dataRequest("PUT", "/player/" + playerId, playerJSON).then((request) => {
             console.log(request.responseText);
+            sessionStorage.setItem('teamId', player.teamPin);
+            window.location.href = '/5aside-1.0/team.html';
+
         }
         )
     })
