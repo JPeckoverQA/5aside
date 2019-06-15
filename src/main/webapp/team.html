@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="5aside.css" />
+
+    <meta charset="utf-8" />
+    <title id="teamPageTitle">team</title>
+
+
+</head>
+<body>
+    <div><h2 id="userForenameHeader">Player Name</h2></div>
+    <div><h1 id="userTeamNameHeader">Team Name</h1></div>
+    <div>
+        <h4 id="teamHomeColour"> Home Colour</h4>
+        <h4 id="teamAwayColour"> Away Colour</h4>
+    </div>
+    <div><h5 id="teamPin">Player Name</h5></div>
+
+    <button type="button" class="btn btn-outline-dark" id="updatePlayerDetailsButton" onclick="window.location.href = '/5aside-1.0/player.html'">Player Profile</button>
+    <button type="button" class="btn btn-outline-dark" id="teamProfileButton" onclick="window.location.href = '/5aside-1.0/teamprofile.html'">Team Profile</button>
+
+
+    <script src="dataRequest.js"></script>
+    <script src="getTeam.js"></script>
+    <script src="getPlayer.js"></script>
+   
+
+
+
+    <script>
+        window.onload = displayTeamDetails(sessionStorage.getItem('teamId'));
+        window.onload = welcomePlayer(sessionStorage.getItem('playerId'));
+    </script>
+
+
+</body>
+</html>

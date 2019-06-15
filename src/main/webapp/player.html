@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="5aside.css" />
+    <meta charset="utf-8" />
+    <title>Player Profile</title>
+</head>
+<body>
+    <div><h2 id="userForenameHeader">Player Name</h2></div>
+    <div><h4 id="personalDetailsHeader">Your Personal Details</h4></div>
+
+    <form name="updatePlayerForm" onsubmit="return false">
+        <div class="form-group">
+            <label for="forenameUpdateLabel">Forename:</label>
+            <input type="text" class="form-control" id="forenameUpdate" aria-describedby="forenameUpdateHelp" placeholder="Enter forename">
+        </div>
+
+        <div class="form-group">
+            <label for="surnameUpdateLabel">Surname:</label>
+            <input type="text" class="form-control" id="surnameUpdate" aria-describedby="surnameUpdateHelp" placeholder="Enter surname">
+        </div>
+
+        <div class="form-group">
+            <label for="contactNoUpdateLabel">Contact number:</label>
+            <input type="text" class="form-control" id="contactNoUpdate" aria-describedby="updateUpdateHelp" placeholder="Enter Contact Number">
+        </div>
+
+        <div class="form-group">
+            <label for="emailUpdateLabel">Email:</label>
+            <input type="email" class="form-control" id="emailUpdate" aria-describedby="emailUpdateHelp" placeholder="Enter email">
+            <small id="emailUpdateHelp" class="form-text text-muted">An email can only be updateed once.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="teamPinLabel">Team PIN:</label>
+            <input type="text" class="form-control" id="teamPinUpdate" aria-describedby="teamPinUpdateHelp" placeholder="Enter team PIN">
+            <small id="teamPinUpdateHelp" class="form-text text-muted">Please enter the PIN for your new team. You must get permission from your new team's captain.</small>
+        </div>
+
+        <button id="updatePlayerButton" type="button" class="btn btn-primary" onclick="updatePlayer(sessionStorage.getItem('playerId'))">Update Details</button>
+        <button id="deletePlayerButton" type="button" class="btn btn-outline-danger" onclick="deletePlayer(sessionStorage.getItem('playerId'))">Delete Account</button>
+    </form>
+
+    <script src="dataRequest.js"></script>
+    <script src="getPlayer.js"></script>
+    <script src="updatePlayer.js"></script>
+    <script src="deletePlayer.js"></script>
+
+    <script>
+        window.onload = welcomePlayer(sessionStorage.getItem('playerId'));
+        window.onload = populatePlayerDetails(sessionStorage.getItem('playerId'));
+
+    </script>
+
+
+</body>
+</html>

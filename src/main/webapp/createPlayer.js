@@ -1,7 +1,7 @@
 let player = {
     forename: "Ngolo",
     surname: "Kante",
-    contactNo: "07862744413",
+    contactNo: "07862747513",
     email: "ngolo@gmail.com",
     teamPin: 1
 }
@@ -28,6 +28,9 @@ function createPlayer() {
     console.log(jsonPlayer);
     dataRequest("POST", "/player", jsonPlayer).then((request) => {
         console.log(request.responseText);
+        sessionStorage.setItem('playerId', player.id);
+        sessionStorage.setItem('teamId', player.teamPin);
+        window.location.href = '/5aside-1.0/team.html';
     })
 }
 
