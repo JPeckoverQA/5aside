@@ -4,7 +4,7 @@ function updatePlayer() {
     setPlayerDetails();
     let playerJSON = JSON.stringify(player);
     console.log(jsonPlayer);
-    serverRequest("PUT", "/players/${playerId}", playerJSON).then((request) => {
+    dataRequest("PUT", "/players/${playerId}", playerJSON).then((request) => {
         console.log(request.responseText);
     })
 }
