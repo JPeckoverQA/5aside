@@ -15,7 +15,6 @@ function displayTeamDetails(teamId) {
 function displayTeamName(teamId) {
     dataRequest("GET", "/team/" + teamId).then((request) => {
         let teamDetails = JSON.parse(request.responseText);
-
         document.getElementById('userTeamNameHeader').innerHTML = teamDetails.name;
     })
 }
