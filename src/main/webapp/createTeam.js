@@ -21,8 +21,6 @@ function createTeam() {
     console.log(jsonTeam);
     dataRequest("POST", "/team", jsonTeam).then((request) => {
         console.log(request.responseText);
-        sessionStorage.setItem('playerId', team.id);
-        sessionStorage.setItem('teamId', team.teamPin);
-        window.location.href = '/5aside-1.0/team.html';
+        window.alert('Success! Now please register your player account')
     })
 }

@@ -6,9 +6,10 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="5aside.css" />
     <meta charset="utf-8" />
-    <title>Player Portal</title>
+    <title>Player Profile</title>
 </head>
 <body>
+    <div><h2 id="userForenameHeader">Player Name</h2></div>
     <div><h4 id="personalDetailsHeader">Your Personal Details</h4></div>
 
     <form name="updatePlayerForm" onsubmit="return false">
@@ -44,11 +45,14 @@
     </form>
 
     <script src="dataRequest.js"></script>
+    <script src="getPlayer.js"></script>
     <script src="updatePlayer.js"></script>
     <script src="deletePlayer.js"></script>
 
     <script>
-        window.onload = populateCurrentDetails(sessionStorage.getItem('playerId'));
+        window.onload = welcomePlayer(sessionStorage.getItem('playerId'));
+        window.onload = populatePlayerDetails(sessionStorage.getItem('playerId'));
+
     </script>
 
 

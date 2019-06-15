@@ -1,4 +1,4 @@
-function getTeam(teamId) {
+function displayTeamDetails(teamId) {
     dataRequest("GET", "/team/" + teamId).then((request) => {
         let teamDetails = JSON.parse(request.responseText);
         
@@ -9,5 +9,12 @@ function getTeam(teamId) {
         document.getElementById('teamPin').innerHTML = "Pin: " + teamDetails.id;
         return teamDetails;
         
+    })
+}
+
+function displayTeamName(teamId) {
+    dataRequest("GET", "/team/" + teamId).then((request) => {
+        let teamDetails = JSON.parse(request.responseText);
+        document.getElementById('userTeamNameHeader').innerHTML = teamDetails.name;
     })
 }
