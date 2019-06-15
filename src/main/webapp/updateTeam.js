@@ -25,7 +25,6 @@ function updateTeam(teamId) {
         console.log(teamJSON);
         dataRequest("PUT", "/team/" + teamId, teamJSON).then((request) => {
             console.log(request.responseText);
-            sessionStorage.setItem('teamId', team.teamPin);
             window.location.href = '/5aside-1.0/team.html';
         }
         )
