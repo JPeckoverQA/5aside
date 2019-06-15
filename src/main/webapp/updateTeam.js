@@ -12,13 +12,13 @@ function updateTeam(teamId) {
         let team = JSON.parse(request.responseText)
 
         if (document.getElementById("teamNameUpdate").value != "") {
-            team.forename = document.getElementById("teamNameUpdate").value;
+            team.name = document.getElementById("teamNameUpdate").value;
         }
         if (document.getElementById("homeColourUpdate").value != "") {
-            team.surname = document.getElementById("homeColourUpdate").value;
+            team.homeColour = document.getElementById("homeColourUpdate").value;
         }
         if (document.getElementById("awayColourUpdate").value != "") {
-            team.contactNo = document.getElementById("awayColourUpdate").value;
+            team.awayColour = document.getElementById("awayColourUpdate").value;
         }
 
         let teamJSON = JSON.stringify(team);
