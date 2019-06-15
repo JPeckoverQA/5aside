@@ -5,11 +5,13 @@ function getTeam(teamId) {
         let userTeamName = teamDetails.name;
         let teamHomeColour = teamDetails.homeColour;
         let teamAwayColour = teamDetails.awayColour;
+        let teamPin = teamDetails.id;
 
         document.getElementById('userTeamNameHeader').innerHTML = userTeamName;
         document.getElementById('teamPageTitle').innerHTML = userTeamName;
         document.getElementById('teamHomeColour').innerHTML = "Home kit: " + teamHomeColour;
         document.getElementById('teamAwayColour').innerHTML = "Away kit: " + teamAwayColour;
+        document.getElementById('teamPin').innerHTML = "Pin: " + teamPin;
         return teamDetails;
         
     })
