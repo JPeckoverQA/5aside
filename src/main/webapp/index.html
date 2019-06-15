@@ -93,6 +93,11 @@
     <script src="createTeam.js"></script>
     <script src="getAllPlayers.js"></script>
     <script src="verifyPlayer.js"></script>
+    <script> 
+        //so if you click back from index page, it doesn't show last user's data
+        window.onload = sessionStorage.clear('playerId');
+        window.onload = sessionStorage.clear('teamId');
+    </script>
 
 
 

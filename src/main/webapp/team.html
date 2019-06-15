@@ -10,23 +10,37 @@
     <link rel="stylesheet" href="5aside.css" />
 
     <meta charset="utf-8" />
-    <title>5 A-side</title>
+    <title id="teamPageTitle">team</title>
+
+
 </head>
 <body>
 
-    <script>
-        let userTeamId = sessionStorage.getItem('teamId');
-        console.log(userTeamId);
-        getTeam(userTeamId);
-        console.log(teamDetails)
-    </script>
 
-    <h1> getTeam(teamId)</h1>
+
+
+    <div><h1 id="userTeamNameHeader">Team Name</h1></div>
+    <div>
+        <h4 id="teamHomeColour"> Home Colour</h4>
+        <h4 id="teamAwayColour"> Away Colour</h4>
+    </div>
+    <div><h5 id="teamPin">Player Name</h5></div>
+    <div><h2 id="userForenameHeader">Player Name</h2></div>
 
 
 
     <script src="dataRequest.js"></script>
     <script src="getTeam.js"></script>
+    <script src="getPlayer.js"></script>
+
+
+    <script>
+        let userTeamId = sessionStorage.getItem('teamId');
+        window.onload = getTeam(userTeamId);
+        let userId = sessionStorage.getItem('playerId');
+        window.onload = getPlayer(userId);
+    </script>
+
 
 </body>
 </html>
