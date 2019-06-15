@@ -1,4 +1,13 @@
 function updatePlayer() {
+    dataRequest("GET", "/player/" + playerId).then((request) => {
+        let playerDetails = JSON.parse(request.responseText);
+
+
+
+
+
+
+
     let playerId = document.getElementById("playerIdInput").value;    
 
     setPlayerDetails();
