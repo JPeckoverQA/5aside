@@ -3,6 +3,7 @@ function deletePlayer(playerId) {
     if (deleteConfirm == true) {
         let playerIdJSON = JSON.stringify(playerId);
         dataRequest("DELETE", "/player/" + playerId, playerIdJSON);
+        window.location.href = '/5aside-1.0';
     }
 }
 
