@@ -18,4 +18,5 @@ function populateCurrentDetails(playerId) {
         document.getElementById('emailUpdate').innerHTML = playerDetails.email;
         document.getElementById('teamPinUpdate').innerHTML = playerDetails.teamPin;
 
+    })
 }
