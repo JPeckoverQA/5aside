@@ -40,9 +40,6 @@ function createPlayer() {
     console.log(jsonPlayer);
     dataRequest("POST", "/player", jsonPlayer).then((request) => {
         console.log(request.responseText);
-        sessionStorage.setItem('playerId', player.id);
-        sessionStorage.setItem('teamId', player.teamPin);
-        window.location.href = '/5aside-1.0/team.html';
 
         //obtain playerId for session storage
         dataRequest("GET", "/player", null).then((request) => {
