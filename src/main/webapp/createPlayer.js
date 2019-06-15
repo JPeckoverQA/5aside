@@ -12,21 +12,25 @@ function createPlayer() {
         player.forename = document.getElementById("forenameRegister").value;
     } else {
         window.alert("You must enter a forename.")
+        return;
     }
     if (document.getElementById("surnameRegister").value != "") {
         player.surname = document.getElementById("surnameRegister").value;
     } else {
         window.alert("You must enter a surname.")
+        return;
     }
     if (document.getElementById("contactNoRegister").value != "") {
         player.contactNo = document.getElementById("contactNoRegister").value;
     } else {
         window.alert("You must enter a contact number.")
+        return;
     }
     if (document.getElementById("emailRegister").value != "") {
         player.email = document.getElementById("emailRegister").value;
     } else {
         window.alert("You must enter an email.")
+        return;
     }
     if (document.getElementById("teamPinRegister").value) {
         player.teamPin = document.getElementById("teamPinRegister").value;
