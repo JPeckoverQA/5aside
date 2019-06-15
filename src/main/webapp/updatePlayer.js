@@ -35,6 +35,7 @@ function updatePlayer(playerId) {
         console.log(jsonPlayer);
         dataRequest("PUT", "/players/" + playerId, playerJSON).then((request) => {
             console.log(request.responseText);
-        })
-    }
+        }
+        )
+    })
 }
