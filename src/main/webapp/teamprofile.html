@@ -6,30 +6,30 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="5aside.css" />
     <meta charset="utf-8" />
-    <title>Player Portal</title>
+    <title>Team Portal</title>
 </head>
 <body>
     <div><h1 id="userTeamNameHeader">Team Name</h1></div>
     <div><h4 id="personalDetailsHeader">Team Details</h4></div>
 
-    <form name="updatePlayerForm" onsubmit="return false">
+    <form name="updateTeamForm" onsubmit="return false">
         <div class="form-group">
-            <label for="teamNameUpdateLabel">Forename:</label>
+            <label for="teamNameUpdateLabel">Team Name:</label>
             <input type="text" class="form-control" id="teamNameUpdate" aria-describedby="teamNameUpdateHelp" placeholder="Enter team name">
         </div>
 
         <div class="form-group">
-            <label for="homeColourUpdateLabel">Surname:</label>
+            <label for="homeColourUpdateLabel">Home Kit Main Colour:</label>
             <input type="text" class="form-control" id="homeColourUpdate" aria-describedby="homeColourUpdateHelp" placeholder="Enter home colour">
         </div>
 
         <div class="form-group">
-            <label for="awayColourUpdateLabel">Contact number:</label>
+            <label for="awayColourUpdateLabel">Away Kit Main Colour:</label>
             <input type="text" class="form-control" id="awayColourUpdate" aria-describedby="awayColourUpdateHelp" placeholder="Enter away colour">
         </div>
 
         <button id="updateTeamButton" type="button" class="btn btn-primary" onclick="updateTeam(sessionStorage.getItem('teamId'))">Update Details</button>
-        <button id="deletePlayerButton" type="button" class="btn btn-outline-danger" onclick="deletePlayer(sessionStorage.getItem('teamId'))">Delete Account</button>
+        <button id="deleteTeamButton" type="button" class="btn btn-outline-danger" onclick="deleteTeam(sessionStorage.getItem('teamId'))">Delete Account</button>
     </form>
 
     <script src="dataRequest.js"></script>
