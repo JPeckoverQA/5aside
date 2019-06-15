@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="5aside.css" />
+    <meta charset="utf-8" />
+    <title>Player Portal</title>
+</head>
+<body>
+    <div><h1 id="userTeamNameHeader">Team Name</h1></div>
+    <div><h4 id="personalDetailsHeader">Team Details</h4></div>
+
+    <form name="updatePlayerForm" onsubmit="return false">
+        <div class="form-group">
+            <label for="teamNameUpdateLabel">Forename:</label>
+            <input type="text" class="form-control" id="teamNameUpdate" aria-describedby="teamNameUpdateHelp" placeholder="Enter team name">
+        </div>
+
+        <div class="form-group">
+            <label for="homeColourUpdateLabel">Surname:</label>
+            <input type="text" class="form-control" id="homeColourUpdate" aria-describedby="homeColourUpdateHelp" placeholder="Enter home colour">
+        </div>
+
+        <div class="form-group">
+            <label for="awayColourUpdateLabel">Contact number:</label>
+            <input type="text" class="form-control" id="awayColourUpdate" aria-describedby="awayColourUpdateHelp" placeholder="Enter away colour">
+        </div>
+
+        <button id="updateTeamButton" type="button" class="btn btn-primary" onclick="updateTeam(sessionStorage.getItem('teamId'))">Update Details</button>
+        <button id="deletePlayerButton" type="button" class="btn btn-outline-danger" onclick="deletePlayer(sessionStorage.getItem('playerId'))">Delete Account</button>
+    </form>
+
+    <script src="dataRequest.js"></script>
+    <script src="getTeam.js"></script>
+    <script src="updateTeam.js"></script>
+    <script src="deleteTeam.js"></script>
+
+    <script>
+        window.onload = displayTeamName(sessionStorage.getItem('playerId'));
+        window.onload = populateTeamDetails(sessionStorage.getItem('playerId'));
+
+    </script>
+
+
+</body>
+</html>

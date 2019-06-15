@@ -1,4 +1,4 @@
-function populateCurrentDetails(playerId) {
+function populatePlayerDetails(playerId) {
     dataRequest("GET", "/player/" + playerId).then((request) => {
         let playerDetails = JSON.parse(request.responseText);
 

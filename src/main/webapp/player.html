@@ -6,7 +6,7 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="5aside.css" />
     <meta charset="utf-8" />
-    <title>Player Portal</title>
+    <title>Player Profile</title>
 </head>
 <body>
     <div><h2 id="userForenameHeader">Player Name</h2></div>
@@ -51,7 +51,7 @@
 
     <script>
         window.onload = welcomePlayer(sessionStorage.getItem('playerId'));
-        window.onload = populateCurrentDetails(sessionStorage.getItem('playerId'));
+        window.onload = populatePlayerDetails(sessionStorage.getItem('playerId'));
 
     </script>
 
