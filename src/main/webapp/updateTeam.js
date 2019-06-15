@@ -20,6 +20,7 @@ function updateTeam(teamId) {
         }
         if (document.getElementById("awayColourUpdate").value != "") {
             team.contactNo = document.getElementById("awayColourUpdate").value;
+        }
 
         let teamJSON = JSON.stringify(team);
         console.log(teamJSON);
@@ -27,7 +28,6 @@ function updateTeam(teamId) {
             console.log(request.responseText);
             sessionStorage.setItem('teamId', team.teamPin);
             window.location.href = '/5aside-1.0/team.html';
-
         }
         )
     })
