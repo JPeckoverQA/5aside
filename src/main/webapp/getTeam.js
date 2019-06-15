@@ -4,7 +4,8 @@ function getTeam(teamId) {
         
         let userTeamName = teamDetails.name;
         console.log(userTeamName);
-        document.getElementById('userTeamNameHeader').innerHTML =userTeamName;
+        document.getElementById('userTeamNameHeader').innerHTML = userTeamName;
+        document.getElementById('teamPageTitle').innerHTML = userTeamName;
         return teamDetails;
         
     })
