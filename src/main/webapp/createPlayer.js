@@ -8,6 +8,12 @@ let player = {
 
 function createPlayer() {
 
+    if (document.getElementById("emailRegister").value != "") {
+        player.email = document.getElementById("emailRegister").value;
+    } else {
+        window.alert("You must enter an email.")
+        return;
+    }
     if (document.getElementById("forenameRegister").value != "") {
         player.forename = document.getElementById("forenameRegister").value;
     } else {
@@ -24,12 +30,6 @@ function createPlayer() {
         player.contactNo = document.getElementById("contactNoRegister").value;
     } else {
         window.alert("You must enter a contact number.")
-        return;
-    }
-    if (document.getElementById("emailRegister").value != "") {
-        player.email = document.getElementById("emailRegister").value;
-    } else {
-        window.alert("You must enter an email.")
         return;
     }
     if (document.getElementById("teamPinRegister").value) {
