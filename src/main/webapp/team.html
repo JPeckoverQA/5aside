@@ -15,6 +15,7 @@
 
 </head>
 <body>
+    <button id ="logOutButton"type="button" class="btn btn-outline-secondary" onclick="logOut()">Log Out</button>
     <div><h2 id="userForenameHeader">Player Name</h2></div>
     <div><h1 id="userTeamNameHeader">Team Name</h1></div>
     <div>
@@ -30,10 +31,8 @@
     <script src="dataRequest.js"></script>
     <script src="getTeam.js"></script>
     <script src="getPlayer.js"></script>
-   
-
-
-
+    <script src="logOut.js"></script>
+s
     <script>
         window.onload = displayTeamDetails(sessionStorage.getItem('teamId'));
         window.onload = welcomePlayer(sessionStorage.getItem('playerId'));
