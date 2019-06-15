@@ -31,9 +31,10 @@ function updatePlayer(playerId) {
             player.teamPin = document.getElementById("teamPinUpdate").value;
         }
 
-    let playerJSON = JSON.stringify(player);
-    console.log(jsonPlayer);
-    dataRequest("PUT", "/players/" + playerId, playerJSON).then((request) => {
-        console.log(request.responseText);
-    })
+        let playerJSON = JSON.stringify(player);
+        console.log(jsonPlayer);
+        dataRequest("PUT", "/players/" + playerId, playerJSON).then((request) => {
+            console.log(request.responseText);
+        })
+    }
 }
