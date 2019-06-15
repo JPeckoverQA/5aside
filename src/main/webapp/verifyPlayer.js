@@ -11,7 +11,7 @@ function verifyPlayer() {
                     sessionStorage.setItem('playerId', user.id);
                     sessionStorage.setItem('teamId', user.teamPin);
                     window.location.href = '/5aside-1.0/team.html';
-                    return user;
+                    return;
                     
                 }
         }

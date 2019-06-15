@@ -32,7 +32,7 @@ function createPlayer() {
         window.alert("You must enter a contact number.")
         return;
     }
-    if (document.getElementById("teamPinRegister").value != 0){
+    if (document.getElementById("teamPinRegister").value != 0) {
         player.teamPin = document.getElementById("teamPinRegister").value;
     }
 
@@ -43,6 +43,24 @@ function createPlayer() {
         sessionStorage.setItem('playerId', player.id);
         sessionStorage.setItem('teamId', player.teamPin);
         window.location.href = '/5aside-1.0/team.html';
+
+        //obtain playerId for session storage
+        dataRequest("GET", "/player", null).then((request) => {
+            const allPlayers = JSON.parse(request.responseText);
+
+            for (let player of allPlayers) {
+                if (player.email === document.getElementById("emailLogin").value) {  //create input form for both
+                    console.log('Player found', player);
+                    const user = player;
+                    console.log(user);
+                    sessionStorage.setItem('playerId', user.id);
+                    sessionStorage.setItem('teamId', user.teamPin);
+                    window.location.href = '/5aside-1.0/team.html';
+                    return;
+
+                }
+            }
+
+        })
     })
 }
-
