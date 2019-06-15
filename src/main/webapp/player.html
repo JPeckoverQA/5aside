@@ -48,7 +48,8 @@
     <script src="deletePlayer.js"></script>
 
     <script>
-        window.onload = populateCurrentDetails(sessionStorage.getItem('playerId'));
+        window.onload = getTeam(sessionStorage.getItem('teamId'));
+        window.onload = getPlayer(sessionStorage.getItem('playerId'));
     </script>
 
 
