@@ -1,5 +1,13 @@
+let player = {
+    forename: "",
+    surname: "",
+    contactNo: "",
+    email: "",
+    teamPin: null
+}
+
 function createPlayer() {
-    let player;
+
     if (document.getElementById("forenameRegister").value != "") {
         player.forename = document.getElementById("forenameRegister").value;
     } else {

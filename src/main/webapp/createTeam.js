@@ -1,5 +1,10 @@
+let team = {
+    name: "",
+    homeColour: "",
+    awayColour: "",
+}
 function createTeam() {
-    let team;
+
     if (document.getElementById("teamNameRegister").value != "") {
         team.name = document.getElementById("teamNameRegister").value;
     } else {
