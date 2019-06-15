@@ -40,24 +40,6 @@ function createPlayer() {
     console.log(jsonPlayer);
     dataRequest("POST", "/player", jsonPlayer).then((request) => {
         console.log(request.responseText);
-
-        //obtain playerId for session storage
-        dataRequest("GET", "/player", null).then((request) => {
-            const allPlayers = JSON.parse(request.responseText);
-
-            for (let player of allPlayers) {
-                if (player.email === document.getElementById("emailLogin").value) {  //create input form for both
-                    console.log('Player found', player);
-                    const user = player;
-                    console.log(user);
-                    sessionStorage.setItem('playerId', user.id);
-                    sessionStorage.setItem('teamId', user.teamPin);
-                    window.location.href = '/5aside-1.0/team.html';
-                    return;
-
-                }
-            }
-
-        })
     })
 }
+
