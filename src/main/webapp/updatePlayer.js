@@ -32,7 +32,7 @@ function updatePlayer(playerId) {
         }
 
         let playerJSON = JSON.stringify(player);
-        console.log(jsonPlayer);
+        console.log(playerJSON);
         dataRequest("PUT", "/players/" + playerId, playerJSON).then((request) => {
             console.log(request.responseText);
         }
