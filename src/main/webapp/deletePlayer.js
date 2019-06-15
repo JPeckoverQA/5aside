@@ -1,8 +1,5 @@
-let id;
-
-function deletePlayer() {
-    let playerId = document.getElementById("playerIdInput").value;
+function deletePlayer(playerId) {
     let playerIdJSON = JSON.stringify(playerId);
-    serverRequest("DELETE", "/players/${playerId}", playerIdJSON);
+    serverRequest("DELETE", "/players/" + playerId, playerIdJSON);
 }
 
