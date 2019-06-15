@@ -20,6 +20,7 @@
 
 
     <div><h1 id="userTeamNameHeader">Team Name</h1></div>
+    <div><h2 id="userForenameHeader">Player Name</h2></div>
 
 
 
@@ -28,6 +29,8 @@
     <script>
         let userTeamId = sessionStorage.getItem('teamId');
         window.onload = getTeam(userTeamId);
+        let userId = sessionStorage.getItem('playerId');
+        window.onload = getPlayer(userId);
     </script>
 
 
