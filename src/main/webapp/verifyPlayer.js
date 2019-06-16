@@ -5,8 +5,21 @@ function verifyPlayer(userEmail) {
     }
     console.log(userEmail);
     verificationRequest("GET", "/playerEmail/" + userEmail).then((request) => {
-        let user = JSON.parse(request.responseText);
-        console.log(user);
+        let userArray = JSON.parse(request.responseText);
+
+        let id = userArray.map(user => user.id);
+        let forename = userArray.map(user => user.forename);
+        let surname = userArray.map(user => user.surname);
+        let playerId = userArray.map(user => user.playerId);
+        let contactNo = userArray.map(user => user.contactNo);
+        let teamPin = userArray.map(user => user.teamPin);
+
+        console.log(id);
+        console.log(forename);
+        console.log(surname);
+        console.log(playerId);
+        console.log(contactNo);
+        console.log(teamPin);
 
         sessionStorage.setItem('playerId', user.id);
         sessionStorage.setItem('teamId', user.teamPin);
