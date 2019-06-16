@@ -43,7 +43,7 @@ public class PlayerEndpoint {
 	}
 	//verify email
 	@GET
-	@Path("/player/{email}")
+	@Path("/playerEmail/{email}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response emailVerify(@PathParam("email") String emailInput) {
 		List<Player> list = playerRepository.emailVerification(emailInput);

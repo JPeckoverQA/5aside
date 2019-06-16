@@ -4,7 +4,7 @@ function verifyPlayer(userEmail) {
         return
     }
     console.log(userEmail);
-    verificationRequest("GET", "/player/" + userEmail).then((request) => {
+    verificationRequest("GET", "/playerEmail/" + userEmail).then((request) => {
         let user = JSON.parse(request.responseText);
 
         sessionStorage.setItem('playerId', user.id);
