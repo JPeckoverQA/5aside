@@ -53,17 +53,6 @@ public class PlayerEndpoint {
 		Player player = playerRepository.read(id);
 		return Response.ok(player).build();
 	}
-	//retrieve player by email for login verification 
-	@GET
-	@Path("/player/{email}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getOne(@PathParam("email") String email) {
-		if (playerRepository.readEmail(email).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Player player = playerRepository.readEmail(email);
-		return Response.ok(player).build();
-	}
 	
 	@POST
 	@Consumes({ "application/json" })
