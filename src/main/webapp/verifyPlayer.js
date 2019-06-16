@@ -4,13 +4,13 @@ function verifyPlayer(userEmail) {
         return
     }
     console.log(userEmail);
-    verificationRequest("GET", "/playerEmail/" + userEmail).then((request) => {
+    dataRequest("GET", "/playerEmail/" + userEmail).then((request) => {
         let userArray = JSON.parse(request.responseText);
-
+        //reduces array of player objects to separate player objects. key is email so id and team id can be found from login email
         const arrayToObject = (array) =>
             array.reduce((player, detail) => {
                 player[detail.email] = detail
-                return player
+                return player;
             }, {})
         const playerObject = arrayToObject(userArray);
         console.log(playerObject[userEmail]);
