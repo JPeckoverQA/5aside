@@ -24,14 +24,13 @@
             <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailLoginHelp" class="form-text text-muted">If you haven't registered before, please register now.</small>
         </div>
-        <button id="loginButton" type="button" class="btn btn-primary" onclick="verifyPlayer()">Login</button>
+        <button id="loginButton" type="button" class="btn btn-primary" onclick="verifyPlayer(document.getElementById('emailLogin')">Login</button>
     </form>
 
-    <button id ="registerPlayerPageButton"type="button" class="btn btn-outline-primary" onclick="window.location.href ='registerplayer.html'">Register Player</button>
-    <button id ="registerTeamPageButton" type="button" class="btn btn-outline-info" onclick="window.location.href ='registerteam.html'">Register Team</button>
+    <button id="registerPlayerPageButton" type="button" class="btn btn-outline-primary" onclick="window.location.href ='registerplayer.html'">Register Player</button>
+    <button id="registerTeamPageButton" type="button" class="btn btn-outline-info" onclick="window.location.href ='registerteam.html'">Register Team</button>
 
-    <script src="dataRequest.js"></script>
-    <script src="getAllPlayers.js"></script>
+    <script src="verificationRequest.js"></script>
     <script src="verifyPlayer.js"></script>
 
 

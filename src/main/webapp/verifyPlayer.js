@@ -1,21 +1,9 @@
-function verifyPlayer() {
+function verifyPlayer(userEmail) {
 
-    dataRequest("GET", "/player", null).then((request) => {
-        const allPlayers = JSON.parse(request.responseText);
-
-            for (let player of allPlayers) {
-                if (player.email === document.getElementById("emailLogin").value) {  //create input form for both
-                    console.log('Player found', player);
-                    const user = player;
-                    console.log(user);      
-                    sessionStorage.setItem('playerId', user.id);
-                    sessionStorage.setItem('teamId', user.teamPin);
-                    window.location.href = '/5aside-1.0/team.html';
-                    return;
-                    
-                }
-        }
-            window.alert('No player recognised')
-            return false;
-        });
-};
+    verificationRequest("GET", "/player/" + userEmail).then((request) => {
+        sessionStorage.setItem('playerId', user.id);
+        sessionStorage.setItem('teamId', user.teamPin);
+        window.location.href = '/5aside-1.0/team.html';
+        return;
+    })
+}
