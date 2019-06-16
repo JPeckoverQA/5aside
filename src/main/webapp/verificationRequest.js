@@ -27,4 +27,4 @@ function verificationRequest(requestType, extension, body) {
         request.setRequestHeader("Content-Type", "application/json");
         request.send(body);
     })
-}s
+}
