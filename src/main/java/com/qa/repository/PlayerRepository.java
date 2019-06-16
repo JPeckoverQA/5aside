@@ -11,7 +11,10 @@ public interface PlayerRepository {
 	
 	//READ 
 	public Player read(int id);
-		
+	
+	//verify email
+	public List<Player> emailVerification(String emailInput);
+	
 	//READ ALL
 	public List<Player> readAll();
 	

@@ -41,6 +41,18 @@ public class PlayerEndpoint {
 		}
 		return Response.ok(list).build();	
 	}
+	//verify email
+	@GET
+	@Path("/player")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response emailVerification(String emailInput) {
+		List<Player> list = playerRepository.emailVerification(emailInput);
+		if (list.isEmpty()) {
+			return Response.noContent().build();
+		}
+		return Response.ok(list).build();	
+	}
+	
 	
 	//retrieve player by id
 	@GET
