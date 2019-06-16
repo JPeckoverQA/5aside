@@ -49,7 +49,7 @@ function createTeam() {
            
 
             window.location.href = '/5aside-1.0';
-            return;
+
         })
     })
 }
