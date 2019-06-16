@@ -1,3 +1,31 @@
-﻿body
-{
+﻿body {
+    height: 100%;
+    font-family: OpenSans-Regular, sans-serif;
+    background-image: url("https://www.theholbrookclub.co.uk/wp-content/uploads/2015/07/Gif-3G-Image.gif");
+    background-size: cover;
+}
+
+h1 {
+    font-family: OpenSans-Regular, sans-serif;
+    align-content: center;
+}
+
+.form-group {
+    align-content: center;
+}
+
+.Container1 {
+    width: 75%;
+
+
+}
+
+.column {
+    background-color: azure;
+}
+
+.logoutbutton {
+    float: right;
+    margin-left: -50%;
+    margin-top: 2em;
 }
