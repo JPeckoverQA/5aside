@@ -1,5 +1,5 @@
 function verifyPlayer(userEmail) {
-
+    console.log(userEmail);
     verificationRequest("GET", "/player/" + userEmail).then((request) => {
         let user = JSON.parse(request.responseText);
 
