@@ -1,5 +1,6 @@
 function verifyPlayer(userEmail) {
     if (userEmail == "") {
+        window.alert("You haven't enterred an email!")
         return
     }
     console.log(userEmail);
