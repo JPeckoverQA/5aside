@@ -30,6 +30,26 @@ function createTeam() {
     console.log(jsonTeam);
     dataRequest("POST", "/team", jsonTeam).then((request) => {
         console.log(request.responseText);
-        window.location.href = '/5aside-1.0'
+        let inputTeamName = document.getElementById("teamNameRegister").value
+        dataRequest("GET", "/teamName/" + inputTeamName).then((request) => {
+            let teamArray = JSON.parse(request.responseText);
+
+            //reduces array of team objects to individual team objects. key is team name so pin can be found using team name
+            const arrayToObject = (array) =>
+                array.reduce((teamObj, detail) => {
+                    teamObj[detail.name] = detail
+                    return teamObj;
+                }, {})
+            const teamObject = arrayToObject(teamArray);
+            console.log(teamObject[inputTeamName]);
+            console.log(teamObject[inputTeamName].id);
+            let teamPin = teamObject[inputTeamName].id;
+
+            window.alert("Your team PIN is: " + teamPin + ".\n To register for " + inputTeamName +
+                " you must submit this PIN in your player profile, or during player registration");
+           
+            window.location.href = '/5aside-1.0';
+
+        })
     })
 }
