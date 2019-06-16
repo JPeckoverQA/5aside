@@ -1,16 +1,22 @@
-function dataRequest(requestType, extension, body) {
+function verificationRequest(requestType, extension, body) {
 
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest();
-        
+
         request.onreadystatechange = () => {
             if (request.readyState === 4) {
                 if (request.status >= 200 && request.status <= 299) {
                     resolve(request);
                     console.log("Successful data request")
                 } else {
-                    console.log(request.status);
-                    reject("Data request failed");
+                    if (request.status == 404) {
+                        console.log("Email not found on server");
+                        window.alert("Sorry, that email isn't recognised");
+                        reject("Email not found on server");
+                    } else {
+                        console.log(request.status);
+                        reject("Data request failed");
+                    }
                 }
             }
         };

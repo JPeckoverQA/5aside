@@ -23,22 +23,24 @@ public class PlayerDB implements PlayerRepository {
 		return player;
 	}
 	
-	public Player read(int id) {		//find id
+	public Player read(int id) {		//find player by id for login verification
 		Player player = em.find(Player.class, id);
 		return player;
 	}
 	
-	public Player readEmail(String email) {		//find email
-		Player player = em.find(Player.class, email);
-		return player;
-	}
-	
 	public List<Player> readAll(){		//find all
-		TypedQuery<Player> q = em.createQuery("Select plyr from Player plyr", Player.class);
-		List<Player> list = q.getResultList();
+		TypedQuery<Player> readAllQuery = em.createQuery("Select plyr from Player plyr", Player.class);
+		List<Player> list = readAllQuery.getResultList();
 		return list;
 	}
 	
+	public List<Player> emailVerification(String emailInput){		//verify email
+		String stmt = "SELECT player FROM Player player WHERE email='" + emailInput + "'";
+		TypedQuery<Player> verifyQuery = em.createQuery(stmt, Player.class);
+		List<Player> list = verifyQuery.getResultList();
+		return list;
+	}
+		
 	@Transactional(value = TxType.REQUIRED)
 	public Player update(int id, Player newInfo) {
 		Player player = read(id);

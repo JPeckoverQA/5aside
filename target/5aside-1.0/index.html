@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -8,18 +8,30 @@
     <link rel="stylesheet" href="5aside.css" />
 
     <meta charset="utf-8" />
-    <title></title>
+
+
+    <title>5aside</title>
 </head>
 <body>
 
-    <form>
+    <h1> Welcome to 5aside!</h1>
+
+    <h2>Login</h2>
+
+    <form name="loginForm" onsubmit="return false">
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address:</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="emailLoginLabel">Login with your email address:</label>
+            <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailLoginHelp" class="form-text text-muted">If you haven't registered before, please register now.</small>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button id="loginButton" type="button" class="btn btn-primary" onclick="verifyPlayer(document.getElementById('emailLogin').value)">Login</button>
     </form>
+
+    <button id="registerPlayerPageButton" type="button" class="btn btn-outline-primary" onclick="window.location.href ='registerplayer.html'">Register Player</button>
+    <button id="registerTeamPageButton" type="button" class="btn btn-outline-info" onclick="window.location.href ='registerteam.html'">Register Team</button>
+
+    <script src="verificationRequest.js"></script>
+    <script src="verifyPlayer.js"></script>
 
 
 </body>

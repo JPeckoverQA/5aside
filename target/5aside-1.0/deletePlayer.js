@@ -1,8 +1,9 @@
-let id;
-
-function deletePlayer() {
-    let playerId = document.getElementById("playerIdInput").value;
-    let playerIdJSON = JSON.stringify(playerId);
-    serverRequest("DELETE", "/players/${playerId}", playerIdJSON);
+function deletePlayer(playerId) {
+    let deleteConfirm = confirm("Are you sure you want to delete your account?");
+    if (deleteConfirm == true) {
+        let playerIdJSON = JSON.stringify(playerId);
+        dataRequest("DELETE", "/player/" + playerId, playerIdJSON);
+        window.location.href = '/5aside-1.0';
+    }
 }
 

@@ -41,7 +41,18 @@ public class PlayerEndpoint {
 		}
 		return Response.ok(list).build();	
 	}
-	
+	//verify email
+	@GET
+	@Path("/playerEmail/{email}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response emailVerify(@PathParam("email") String emailInput) {
+		List<Player> list = playerRepository.emailVerification(emailInput);
+		if (list.size() == 0) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		return Response.ok(list).build();	
+	}
+		
 	//retrieve player by id
 	@GET
 	@Path("/player/{id}")
@@ -51,17 +62,6 @@ public class PlayerEndpoint {
 			return Response.status(Status.NOT_FOUND).build();
 		}
 		Player player = playerRepository.read(id);
-		return Response.ok(player).build();
-	}
-	//retrieve player by email for verification 
-	@GET
-	@Path("/player/{email}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getOne(@PathParam("email") String email) {
-		if (playerRepository.readEmail(email).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Player player = playerRepository.readEmail(email);
 		return Response.ok(player).build();
 	}
 	
