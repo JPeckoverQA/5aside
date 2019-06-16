@@ -35,8 +35,8 @@ function createTeam() {
             let teamArray = JSON.parse(request.responseText);
 
             //reduces array of team objects to individual team objects. key is team name so pin can be found using team name
-            const arrayToObject = (array) =>
-                array.reduce((teamObj, detail) => {
+            const arrayToObject = (teamArray) =>
+                teamArray.reduce((teamObj, detail) => {
                     teamObj[detail.name] = detail
                     return teamObj;
                 }, {})
