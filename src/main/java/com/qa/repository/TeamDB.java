@@ -8,6 +8,7 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
+import com.qa.model.Player;
 import com.qa.model.Team;
 
 	
@@ -31,6 +32,14 @@ public class TeamDB implements TeamRepository {
 	public List<Team> readAll(){		//find all
 		TypedQuery<Team> q = em.createQuery("Select tm from Team tm", Team.class);
 		List<Team> list = q.getResultList();
+		return list;
+	}
+	
+	//find team by name for pin 
+	public List<Team> getTeamName(String teamName){		//verify email
+		String stmt = "SELECT team FROM Team team WHERE name='" + teamName + "'";
+		TypedQuery<Team> verifyQuery = em.createQuery(stmt, Team.class);
+		List<Team> list = verifyQuery.getResultList();
 		return list;
 	}
 	

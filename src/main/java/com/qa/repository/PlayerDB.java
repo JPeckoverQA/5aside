@@ -23,7 +23,7 @@ public class PlayerDB implements PlayerRepository {
 		return player;
 	}
 	
-	public Player read(int id) {		//find player by id for login verification
+	public Player read(int id) {		
 		Player player = em.find(Player.class, id);
 		return player;
 	}
@@ -33,7 +33,7 @@ public class PlayerDB implements PlayerRepository {
 		List<Player> list = readAllQuery.getResultList();
 		return list;
 	}
-	
+	//find players by email for login 
 	public List<Player> emailVerification(String emailInput){		//verify email
 		String stmt = "SELECT player FROM Player player WHERE email='" + emailInput + "'";
 		TypedQuery<Player> verifyQuery = em.createQuery(stmt, Player.class);

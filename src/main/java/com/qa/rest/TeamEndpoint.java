@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
-
+import com.qa.model.Player;
 import com.qa.model.Team;
 
 import com.qa.repository.TeamRepository;
@@ -51,6 +51,18 @@ public class TeamEndpoint {
 		}
 		Team team = teamRepository.read(id);
 		return Response.ok(team).build();
+	}
+	
+	//search by team name to get pin
+	@GET
+	@Path("/teamName/{name}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getByTeamName(@PathParam("name") String teamName) {
+		List<Team> list = teamRepository.getTeamName(teamName);
+		if (list.size() == 0) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		return Response.ok(list).build();	
 	}
 	
 	@POST
