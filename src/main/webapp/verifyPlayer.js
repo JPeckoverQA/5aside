@@ -14,7 +14,7 @@ function verifyPlayer(userEmail) {
             }, {})
         const playerObject = arrayToObject(userArray);
         console.log(playerObject[userEmail]);
-        console.log(playerObject.email);
+        console.log(playerObject[userEmail].email);
 
         //let id = userArray.map(user => user.id);
         //let forename = userArray.map(user => user.forename);
