@@ -40,6 +40,7 @@ function createPlayer() {
     console.log(jsonPlayer);
     dataRequest("POST", "/player", jsonPlayer).then((request) => {
         console.log(request.responseText);
+        window.location.href = '/5aside-1.0'
     })
 }
 

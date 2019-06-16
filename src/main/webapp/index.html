@@ -10,11 +10,11 @@
     <meta charset="utf-8" />
 
 
-    <title>5 A-side</title>
+    <title>5aside</title>
 </head>
 <body>
 
-    <h1> Welcome!!</h1>
+    <h1> Welcome to 5aside!</h1>
 
     <h2>Login</h2>
 
@@ -27,78 +27,12 @@
         <button id="loginButton" type="button" class="btn btn-primary" onclick="verifyPlayer()">Login</button>
     </form>
 
-    <h2>Register Player</h2>
-
-    <form name="registerPlayerForm" onsubmit="return false">
-        <div class="form-group">
-            <label for="emailRegisterLabel">Email:</label>
-            <input type="email" class="form-control" id="emailRegister" aria-describedby="emailRegisterHelp" placeholder="Enter email">
-            <small id="emailRegisterHelp" class="form-text text-muted">An email can only be registered once.</small>
-        </div>
-
-        <div class="form-group">
-            <label for="forenameRegisterLabel">Forename:</label>
-            <input type="text" class="form-control" id="forenameRegister" aria-describedby="forenameRegisterHelp" placeholder="Enter forename">
-        </div>
-
-        <div class="form-group">
-            <label for="surnameRegisterLabel">Surname:</label>
-            <input type="text" class="form-control" id="surnameRegister" aria-describedby="surnameRegisterHelp" placeholder="Enter surname">
-        </div>
-
-        <div class="form-group">
-            <label for="contactNoRegisterLabel">Contact number:</label>
-            <input type="text" class="form-control" id="contactNoRegister" aria-describedby="registerRegisterHelp" placeholder="Enter Contact Number">
-        </div>
-
-        <div class="form-group">
-            <label for="teamPinLabel">Team PIN:</label>
-            <input type="text" class="form-control" id="teamPinRegister" aria-describedby="teamPinRegisterHelp" placeholder="Enter team PIN">
-            <small id="teamPinRegisterHelp" class="form-text text-muted">Please enter the PIN for your team. If you don't have a team leave blank.</small>
-        </div>
-
-        <button id="registerPlayerButton" type="button" class="btn btn-primary" onclick="createPlayer()">Register Player</button>
-
-    </form>
-
-
-    <h2>Register Team</h2>
-
-    <form name="registerTeamForm" onsubmit="return false">
-        <div class="form-group">
-            <label for="teamNameRegisterLabel">Team Name:</label>
-            <input type="text" class="form-control" id="teamNameRegister" aria-describedby="teamNameRegisterHelp" placeholder="Enter team name">
-            <small id="teamNameRegisterHelp" class="form-text text-muted">What is the name of your team?</small>
-        </div>
-
-        <div class="form-group">
-            <label for="homeColourRegisterLabel">Home Kit Colour:</label>
-            <input type="text" class="form-control" id="homeKitColourRegister" aria-describedby="homeKitRegisterHelp" placeholder="Enter home kit colour">
-            <small id="homeColourRegisterHelp" class="form-text text-muted">What is the main colour of your home kit?</small>
-        </div>
-
-        <div class="form-group">
-            <label for="awayColourRegisterLabel">Away Kit Colour:</label>
-            <input type="text" class="form-control" id="awayKitColourRegister" aria-describedby="awayKitRegisterHelp" placeholder="Enter away kit colour">
-            <small id="awayColourRegisterHelp" class="form-text text-muted">What is the main colour of your away kit?</small>
-        </div>
-
-        <button id="registerTeamButton" type="button" class="btn btn-primary" onclick="createTeam()">Register Team</button>
-
-    </form>
-
+    <button id ="registerPlayerPageButton"type="button" class="btn btn-outline-primary" onclick="window.location.href ='registerplayer.html'">Register Player</button>
+    <button id ="registerTeamPageButton" type="button" class="btn btn-outline-info" onclick="window.location.href ='registerteam.html'">Register Team</button>
 
     <script src="dataRequest.js"></script>
-    <script src="createPlayer.js"></script>
-    <script src="createTeam.js"></script>
     <script src="getAllPlayers.js"></script>
     <script src="verifyPlayer.js"></script>
-    <script> 
-        //so if you click back from index page, it doesn't show last user's data
-        window.onload = sessionStorage.clear('playerId');
-        window.onload = sessionStorage.clear('teamId');
-    </script>
-
 
 
 </body>

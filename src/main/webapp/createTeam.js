@@ -30,6 +30,6 @@ function createTeam() {
     console.log(jsonTeam);
     dataRequest("POST", "/team", jsonTeam).then((request) => {
         console.log(request.responseText);
-        window.alert('Success! Now please register your player account')
+        window.location.href = '/5aside-1.0'
     })
 }
