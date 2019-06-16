@@ -53,7 +53,7 @@ public class PlayerEndpoint {
 		Player player = playerRepository.read(id);
 		return Response.ok(player).build();
 	}
-	//retrieve player by email for verification 
+	//retrieve player by email for login verification 
 	@GET
 	@Path("/player/{email}")
 	@Produces(MediaType.APPLICATION_JSON)
