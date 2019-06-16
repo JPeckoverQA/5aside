@@ -24,7 +24,7 @@
             <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailLoginHelp" class="form-text text-muted">If you haven't registered before, please register now.</small>
         </div>
-        <button id="loginButton" type="button" class="btn btn-primary" onclick="verifyPlayer(document.getElementById('emailLogin'))">Login</button>
+        <button id="loginButton" type="button" class="btn btn-primary" onclick="verifyPlayer(document.getElementById('emailLogin').value)">Login</button>
     </form>
 
     <button id="registerPlayerPageButton" type="button" class="btn btn-outline-primary" onclick="window.location.href ='registerplayer.html'">Register Player</button>
