@@ -35,12 +35,12 @@ public class PlayerDB implements PlayerRepository {
 	}
 	
 	public List<Player> emailVerification(String emailInput){		//verify email
-		String stmt = "SELECT * FROM PLAYER " + "WHERE EMAIL = " + emailInput;
+		String stmt = "SELECT player FROM Player player WHERE email='" + emailInput + "'";
 		TypedQuery<Player> verifyQuery = em.createQuery(stmt, Player.class);
 		List<Player> list = verifyQuery.getResultList();
 		return list;
 	}
-	
+		
 	@Transactional(value = TxType.REQUIRED)
 	public Player update(int id, Player newInfo) {
 		Player player = read(id);
