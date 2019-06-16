@@ -59,11 +59,11 @@ public class TeamEndpoint {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getByTeamName(@PathParam("name") String teamName ) {
 		//String teamNameNoSpaces = teamName.replaceAll("\\s+","");	//removes spaces in team name
-		List<Team> list = teamRepository.getTeamName(teamName);
-		if (list.isEmpty()) {
+		Team retrievedId = teamRepository.getTeamId(teamName);
+		if (teamRepository.getTeamId(teamName).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		return Response.ok(list).build();	
+		return Response.ok(retrievedId).build();	
 	}
 		
 	@POST

@@ -36,11 +36,11 @@ public class TeamDB implements TeamRepository {
 	}
 	
 	//find team by name for pin 
-	public List<Team> getTeamName(String teamName){		//verify email
+	public Team getTeamId(String teamName){		//verify email
 		String stmt = "SELECT id FROM Team team WHERE name='" + teamName + "'";
-		TypedQuery<Team> teamQuery = em.createQuery(stmt, Team.class);
-		List<Team> list = teamQuery.getResultList();
-		return list;
+		TypedQuery<Team> teamIdQuery = em.createQuery(stmt, Team.class);
+		Team idFromName =  teamIdQuery.getSingleResult();
+		return idFromName;
 	}
 	
 	
