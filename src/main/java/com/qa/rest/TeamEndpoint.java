@@ -55,7 +55,7 @@ public class TeamEndpoint {
 	
 	//search by team name to get pin
 	@GET
-	@Path("/teamName/{name}")
+	@Path("/teamNames/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getByTeamName(@PathParam("name") String teamName ) {
 		//String teamNameNoSpaces = teamName.replaceAll("\\s+","");	//removes spaces in team name
