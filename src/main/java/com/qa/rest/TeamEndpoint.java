@@ -55,15 +55,14 @@ public class TeamEndpoint {
 	
 	//search by team name to get pin
 	@GET
-	@Path("/teamNames/{name}")
+	@Path("/teamName/{teamName}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getByTeamName(@PathParam("name") String teamName ) {
-		//String teamNameNoSpaces = teamName.replaceAll("\\s+","");	//removes spaces in team name
-		Team retrievedId = teamRepository.getTeamId(teamName);
-		if (teamRepository.getTeamId(teamName).equals(null)) {
+	public Response emailVerify(@PathParam("teamName") String teamNameInput) {
+		List<Team> list = teamRepository.getPinByName(teamNameInput);
+		if (list.size() == 0) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		return Response.ok(retrievedId).build();	
+		return Response.ok(list).build();	
 	}
 		
 	@POST

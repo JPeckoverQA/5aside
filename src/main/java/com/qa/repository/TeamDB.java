@@ -30,24 +30,24 @@ public class TeamDB implements TeamRepository {
 	}
 	
 	public List<Team> readAll(){		//find all
-		TypedQuery<Team> q = em.createQuery("Select tm from Team tm", Team.class);
+		TypedQuery<Team> q = em.createQuery("Select teamm from Team team", Team.class);
 		List<Team> list = q.getResultList();
 		return list;
 	}
 	
 	//find team by name for pin 
-	public Team getTeamId(String teamName){		//verify email
-		String stmt = "SELECT id FROM Team team WHERE name='" + teamName + "'";
-		TypedQuery<Team> teamIdQuery = em.createQuery(stmt, Team.class);
-		Team idFromName =  teamIdQuery.getSingleResult();
-		return idFromName;
+	public List<Team> getPinByName(String teamNameInput){
+		String stmt = "SELECT team FROM Team team WHERE teamName='" + teamNameInput + "'";
+		TypedQuery<Team> verifyQuery = em.createQuery(stmt, Team.class);
+		List<Team> list = verifyQuery.getResultList();
+		return list;
 	}
 	
 	
 	@Transactional(value = TxType.REQUIRED)
 	public Team update(int id, Team newInfo) {
 		Team team = read(id);
-		team.setName(newInfo.getName());
+		team.setTeamName(newInfo.getTeamName());
 		team.setHomeColour(newInfo.getHomeColour());
 		team.setAwayColour(newInfo.getAwayColour());
 

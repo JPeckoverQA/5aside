@@ -16,7 +16,7 @@ public interface TeamRepository {
 	public List<Team> readAll();
 	
 	//get team pin
-	public Team getTeamId(String teamName);
+	public List<Team> getPinByName(String teamNameInput);
 	
 	//UPDATE
 	public Team update(int id, Team team);
