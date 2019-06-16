@@ -48,7 +48,6 @@ function createTeam() {
             window.alert("Your team PIN is: " + teamPin + ".\n To register for " + inputTeamName +
                 " you must submit this PIN in your player profile, or during player registration");
            
-
             window.location.href = '/5aside-1.0';
 
         })
