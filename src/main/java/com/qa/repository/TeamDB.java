@@ -37,7 +37,7 @@ public class TeamDB implements TeamRepository {
 	
 	//find team by name for pin 
 	public List<Team> getPinByName(String teamNameInput){
-		String stmt = "SELECT team FROM Team team WHERE teamName='" + teamNameInput + "'";
+		String stmt = "SELECT team FROM Team team WHERE name='" + teamNameInput + "'";
 		TypedQuery<Team> verifyQuery = em.createQuery(stmt, Team.class);
 		List<Team> list = verifyQuery.getResultList();
 		return list;
@@ -47,7 +47,7 @@ public class TeamDB implements TeamRepository {
 	@Transactional(value = TxType.REQUIRED)
 	public Team update(int id, Team newInfo) {
 		Team team = read(id);
-		team.setTeamName(newInfo.getTeamName());
+		team.setName(newInfo.getName());
 		team.setHomeColour(newInfo.getHomeColour());
 		team.setAwayColour(newInfo.getAwayColour());
 

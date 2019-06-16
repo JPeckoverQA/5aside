@@ -11,7 +11,7 @@ public class Team {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	private String teamName;
+	private String name;
 	private String homeColour;
 	private String awayColour;
 	
@@ -21,11 +21,11 @@ public class Team {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getTeamName() {
-		return teamName;
+	public String getName() {
+		return name;
 	}
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getHomeColour() {
 		return homeColour;
