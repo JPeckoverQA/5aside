@@ -31,7 +31,7 @@ function createTeam() {
     dataRequest("POST", "/team", jsonTeam).then((request) => {
         console.log(request.responseText);
 
-        dataRequest("GET", "/teamName/" + (document.getElementById("teamNameRegister")).replace(/\s/g, '')).then((request) => {
+        dataRequest("GET", "/teamName/" + document.getElementById("teamNameRegister")).then((request) => {
             let teamArray = JSON.parse(request.responseText);
 
             //reduces array of team objects to individual team objects. key is team name so pin can be found using team name
