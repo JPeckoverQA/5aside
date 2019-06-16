@@ -57,7 +57,7 @@ public class TeamEndpoint {
 	@GET
 	@Path("/teamName/{teamName}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response emailVerify(@PathParam("teamName") String teamNameInput) {
+	public Response getIdByTeamName(@PathParam("teamName") String teamNameInput) {
 		List<Team> list = teamRepository.getPinByName(teamNameInput);
 		if (list.size() == 0) {
 			return Response.status(Status.NOT_FOUND).build();
