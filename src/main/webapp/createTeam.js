@@ -45,11 +45,12 @@ function createTeam() {
             console.log(teamObject[inputTeamName].id);
             let teamPin = teamObject[inputTeamName].id;
 
-            window.alert("Your team PIN is: " + teamPin + ".\n You must submit this in your player profile, or when you register");
+            window.alert("Your team PIN is: " + teamPin + ".\n To register for " + inputTeamName +
+                " you must submit this PIN in your player profile, or during player registration");
            
 
             window.location.href = '/5aside-1.0';
 
         })
     })
-}
+}s
