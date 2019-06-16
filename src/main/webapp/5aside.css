@@ -3,6 +3,7 @@
     font-family: OpenSans-Regular, sans-serif;
     background-image: url("https://www.theholbrookclub.co.uk/wp-content/uploads/2015/07/Gif-3G-Image.gif");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 h1 {
