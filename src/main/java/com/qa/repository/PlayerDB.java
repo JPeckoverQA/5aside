@@ -28,6 +28,11 @@ public class PlayerDB implements PlayerRepository {
 		return player;
 	}
 	
+	public Player readEmail(String email) {		//find email
+		Player player = em.find(Player.class, email);
+		return player;
+	}
+	
 	public List<Player> readAll(){		//find all
 		TypedQuery<Player> q = em.createQuery("Select plyr from Player plyr", Player.class);
 		List<Player> list = q.getResultList();
