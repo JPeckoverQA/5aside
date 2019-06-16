@@ -45,7 +45,7 @@ function createTeam() {
             console.log(teamObject[inputTeamName].id);
             let teamPin = teamObject[inputTeamName].id;
 
-            window.alert("Your team PIN is: " + teamPin + ". You must submit this in your player profile, or when you register");
+            window.alert("Your team PIN is: " + teamPin + ".\n You must submit this in your player profile, or when you register");
            
 
             window.location.href = '/5aside-1.0';
