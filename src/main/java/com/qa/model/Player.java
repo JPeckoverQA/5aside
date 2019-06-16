@@ -14,8 +14,6 @@ public class Player {
 	private String forename;
 	private String surname;
 	private String contactNo;
-	// for verification
-	@Id
 	private String email;
 	private int teamPin;
 	
