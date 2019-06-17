@@ -216,6 +216,7 @@ public class CRUDTests {
 			action.moveToElement(driver.findElement(By.id("loginButton"))).click().perform();
 			Thread.sleep(100);
 			action.moveToElement(driver.findElement(By.id("updatePlayerDetailsButton"))).click().perform();
+			Thread.sleep(100);
 			String currentForename = driver.findElement(By.id("forenameUpdate")).getText();
 			assertEquals("current player details displayed before update test fail", "testForename", currentForename);
 			
