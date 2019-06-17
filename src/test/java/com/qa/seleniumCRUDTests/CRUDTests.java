@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -110,8 +111,118 @@ public class CRUDTests {
 		assertEquals("Create team test failed", "Are you sure you want to delete your account?", confirmation);
 	}
 	
+	@Test
+	public void logIn() throws InterruptedException {
+		//register team button
+		driver.get("http://35.246.42.33:8080/5aside-1.0/");
+		action.moveToElement(driver.findElement(By.id("registerTeamPageButton"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		//register team
+		RegisterTeamPage registerTeamPage = PageFactory.initElements(driver, RegisterTeamPage.class);
+		registerTeamPage.inputs("Test Ham United FC", "Blue", "White");
+		action.moveToElement(driver.findElement(By.id("registerTeamButton"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		Thread.sleep(100);
+		
+		
+		String teamPinText = driver.switchTo().alert().getText();
+		//finds pin from within alert
+		String teamPin = teamPinText.substring(18, 20);
+		Thread.sleep(100);
+		driver.switchTo().alert().accept();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		
+		//register player
+		action.moveToElement(driver.findElement(By.id("registerPlayerPageButton"))).click().perform();
+		RegisterPlayerPage registerPlayerPage = PageFactory.initElements(driver, RegisterPlayerPage.class);
+		registerPlayerPage.inputs("testPlayer@test.com", "testForename", "testSurname", "testContactNo", teamPin);
+		action.moveToElement(driver.findElement(By.id("registerPlayerButton"))).click().perform();
+		driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+		Thread.sleep(100);
+				
+		LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
+		landingPage.inputs("testPlayer@test.com");
+		action.moveToElement(driver.findElement(By.id("loginButton"))).click().perform();
+		Thread.sleep(100);
+		assertEquals("Login fail", "Hello testForename!", driver.findElement(By.id("userForenameHeader")).getText());
+	}
+		@Test
+		public void logInTeamNameDisplays() throws InterruptedException {
+			//register team button
+			driver.get("http://35.246.42.33:8080/5aside-1.0/");
+			action.moveToElement(driver.findElement(By.id("registerTeamPageButton"))).click().perform();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			//register team
+			RegisterTeamPage registerTeamPage = PageFactory.initElements(driver, RegisterTeamPage.class);
+			registerTeamPage.inputs("Test Ham United FC", "Blue", "White");
+			action.moveToElement(driver.findElement(By.id("registerTeamButton"))).click().perform();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			Thread.sleep(100);
+			
+			
+			String teamPinText = driver.switchTo().alert().getText();
+			//finds pin from within alert
+			String teamPin = teamPinText.substring(18, 20);
+			Thread.sleep(100);
+			driver.switchTo().alert().accept();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			
+			//register player
+			action.moveToElement(driver.findElement(By.id("registerPlayerPageButton"))).click().perform();
+			RegisterPlayerPage registerPlayerPage = PageFactory.initElements(driver, RegisterPlayerPage.class);
+			registerPlayerPage.inputs("testPlayer@test.com", "testForename", "testSurname", "testContactNo", teamPin);
+			action.moveToElement(driver.findElement(By.id("registerPlayerButton"))).click().perform();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			Thread.sleep(100);
+					
+			LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
+			landingPage.inputs("testPlayer@test.com");
+			action.moveToElement(driver.findElement(By.id("loginButton"))).click().perform();
+			Thread.sleep(100);
+			assertEquals("Login team name displays fail", "Test Ham United FC", driver.findElement(By.id("userTeamNameHeader")).getText());
+				
+	}
+		@Test
+		public void currentPlayerDetailsDisplayedBeforeUpdate() throws InterruptedException {
+			//register team button
+			driver.get("http://35.246.42.33:8080/5aside-1.0/");
+			action.moveToElement(driver.findElement(By.id("registerTeamPageButton"))).click().perform();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			//register team
+			RegisterTeamPage registerTeamPage = PageFactory.initElements(driver, RegisterTeamPage.class);
+			registerTeamPage.inputs("Test Ham United FC", "Blue", "White");
+			action.moveToElement(driver.findElement(By.id("registerTeamButton"))).click().perform();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			Thread.sleep(100);
+			
+			
+			String teamPinText = driver.switchTo().alert().getText();
+			//finds pin from within alert
+			String teamPin = teamPinText.substring(18, 20);
+			Thread.sleep(100);
+			driver.switchTo().alert().accept();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			
+			//register player
+			action.moveToElement(driver.findElement(By.id("registerPlayerPageButton"))).click().perform();
+			RegisterPlayerPage registerPlayerPage = PageFactory.initElements(driver, RegisterPlayerPage.class);
+			registerPlayerPage.inputs("testPlayer@test.com", "testForename", "testSurname", "testContactNo", teamPin);
+			action.moveToElement(driver.findElement(By.id("registerPlayerButton"))).click().perform();
+			driver.manage().timeouts().implicitlyWait(1L, TimeUnit.SECONDS);
+			Thread.sleep(100);
+					
+			LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
+			landingPage.inputs("testPlayer@test.com");
+			action.moveToElement(driver.findElement(By.id("loginButton"))).click().perform();
+			Thread.sleep(100);
+			action.moveToElement(driver.findElement(By.id("updatePlayerDetailsButton"))).click().perform();
+			String currentForename = driver.findElement(By.id("forenameUpdate")).getText();
+			assertEquals("current player details displayed before update test fail", "testForename", currentForename);
+			
+			
 	
 	
+}
 }
 	
 	
