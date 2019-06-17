@@ -4,8 +4,8 @@ function displayTeamDetails(teamId) {
         
         document.getElementById('userTeamNameHeader').innerHTML = teamDetails.name;
         document.getElementById('teamPageTitle').innerHTML = teamDetails.name;
-        document.getElementById('teamHomeColour').innerHTML = "Home kit: " + teamDetails.homeColour;
-        document.getElementById('teamAwayColour').innerHTML = "Away kit: " + teamDetails.awayColour;
+        document.getElementById('teamHomeColour').innerHTML = "Home Kit: " + teamDetails.homeColour;
+        document.getElementById('teamAwayColour').innerHTML = "Away Kit: " + teamDetails.awayColour;
         document.getElementById('teamPin').innerHTML = "Pin: " + teamDetails.id;
         return teamDetails;
         
