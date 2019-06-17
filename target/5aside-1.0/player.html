@@ -9,41 +9,54 @@
     <title>Player Profile</title>
 </head>
 <body>
-    <button id="logOutButton" type="button" class="btn btn-outline-secondary" onclick="logOut()">Log Out</button>
-    <div><h2 id="userForenameHeader">Player Name</h2></div>
-    <div><h4 id="personalDetailsHeader">Your Personal Details</h4></div>
 
-    <form name="updatePlayerForm" onsubmit="return false">
-        <div class="form-group">
-            <label for="forenameUpdateLabel">Forename:</label>
-            <input type="text" class="form-control" id="forenameUpdate" aria-describedby="forenameUpdateHelp" placeholder="Enter forename">
+    <div class="container Container1 pt-5">
+        <div class="row">
+            <div class="col-sm">
+                <img class="rounded-circle" src="5aside-logo.jpg" alt="5aside Logo" width="200" height="200">
+            </div>
+
+            <div class="col-sm column rounded">
+
+                <button id="logOutButton" type="button" class="btn btn-outline-danger logoutbutton" onclick="logOut()">Log Out</button>
+                <div><h2 id="userForenameHeader">Player Name</h2></div>
+                <div><h4 id="personalDetailsHeader">Your Personal Details</h4></div>
+
+                <form name="updatePlayerForm" onsubmit="return false">
+                    <div class="form-group">
+                        <label for="forenameUpdateLabel">Forename:</label>
+                        <input type="text" class="form-control" id="forenameUpdate" aria-describedby="forenameUpdateHelp" placeholder="Enter forename">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="surnameUpdateLabel">Surname:</label>
+                        <input type="text" class="form-control" id="surnameUpdate" aria-describedby="surnameUpdateHelp" placeholder="Enter surname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNoUpdateLabel">Contact number:</label>
+                        <input type="text" class="form-control" id="contactNoUpdate" aria-describedby="updateUpdateHelp" placeholder="Enter Contact Number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailUpdateLabel">Email:</label>
+                        <input type="email" class="form-control" id="emailUpdate" aria-describedby="emailUpdateHelp" placeholder="Enter email">
+                        <small id="emailUpdateHelp" class="form-text text-muted">An email can only be updateed once.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="teamPinLabel">Team PIN:</label>
+                        <input type="text" class="form-control" id="teamPinUpdate" aria-describedby="teamPinUpdateHelp" placeholder="Enter team PIN">
+                        <small id="teamPinUpdateHelp" class="form-text text-muted">Please enter the PIN for your new team. You must get permission from your new team's captain.</small>
+                    </div>
+                </form>
+                <div class="pb-3">
+                    <button id="updatePlayerButton" type="button" class="btn btn-primary" onclick="updatePlayer(sessionStorage.getItem('playerId'))">Update Details</button>
+                    <button id="deletePlayerButton" type="button" class="btn btn-outline-danger" onclick="deletePlayer(sessionStorage.getItem('playerId'))">Delete Account</button>
+                </div>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="surnameUpdateLabel">Surname:</label>
-            <input type="text" class="form-control" id="surnameUpdate" aria-describedby="surnameUpdateHelp" placeholder="Enter surname">
-        </div>
-
-        <div class="form-group">
-            <label for="contactNoUpdateLabel">Contact number:</label>
-            <input type="text" class="form-control" id="contactNoUpdate" aria-describedby="updateUpdateHelp" placeholder="Enter Contact Number">
-        </div>
-
-        <div class="form-group">
-            <label for="emailUpdateLabel">Email:</label>
-            <input type="email" class="form-control" id="emailUpdate" aria-describedby="emailUpdateHelp" placeholder="Enter email">
-            <small id="emailUpdateHelp" class="form-text text-muted">An email can only be updateed once.</small>
-        </div>
-
-        <div class="form-group">
-            <label for="teamPinLabel">Team PIN:</label>
-            <input type="text" class="form-control" id="teamPinUpdate" aria-describedby="teamPinUpdateHelp" placeholder="Enter team PIN">
-            <small id="teamPinUpdateHelp" class="form-text text-muted">Please enter the PIN for your new team. You must get permission from your new team's captain.</small>
-        </div>
-
-        <button id="updatePlayerButton" type="button" class="btn btn-primary" onclick="updatePlayer(sessionStorage.getItem('playerId'))">Update Details</button>
-        <button id="deletePlayerButton" type="button" class="btn btn-outline-danger" onclick="deletePlayer(sessionStorage.getItem('playerId'))">Delete Account</button>
-    </form>
+    </div>
 
     <script src="dataRequest.js"></script>
     <script src="getPlayer.js"></script>
