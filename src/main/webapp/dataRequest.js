@@ -15,7 +15,7 @@ function dataRequest(requestType, extension, body) {
             }
         };
 
-        request.open(requestType, "http://35.246.42.33:8080/5aside-1.0/api" + extension);
+        request.open(requestType, "http://35.233.118.14:8080/5aside-1.0/api" + extension);
         request.setRequestHeader("Content-Type", "application/json");
         request.send(body);
     })
